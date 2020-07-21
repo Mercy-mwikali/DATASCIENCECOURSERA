@@ -1,0 +1,43 @@
+---
+title: "HelloWorld"
+author: "Mercy Mwikali"
+date: "7/21/2020"
+output:
+  word_document: default
+  html_document: default
+---
+## R Markdown
+
+This is an R Markdown document. 
+
+#**CEO SALARY, ANNUAL FIRM SALES, RETURN ON EQUITY AND RETURN ON COMPANY STOCKS**
+
+##*How does the CEO's salary change with a change in ROE, ROS and Sales?*
+
+```{r, }
+library(readxl)
+read_excel("C:\\Users\\mercy\\Documents\\INTRODUCTORY ECONOMETRICS\\CEOSAL1.xls")
+
+```
+```{r}
+CEOSAL1=read_excel("C:\\Users\\mercy\\Documents\\INTRODUCTORY ECONOMETRICS\\CEOSAL1.xls")
+head(CEOSAL1)
+```
+From the data obtained from CEOSAL1, we need to formulate an equation that explains the relationship between CEO's salary(salary), the log of sales, Log(sales), return on equity(roe) and return of company stocks(ros).
+We set our dependent variable as salary and our independent variables as sales, roe and ros.
+```{r}
+names(CEOSAL1)
+
+```
+log(salary) = 4.3117125 + 0.2803149log(sales) + 0.0174168roe + 0.0002417ros
+
+#**Interpreting the Coefficients**
+
+*The question then is how do we interpret the coefficients on each of the parameters*
+
+##**How does a change in sales affect the CEO's salary?**
+When sales increase of the company increase by 1%, the CEO's salary increases by 0.28%. 
+##**How does a change in return on equity(roe) affect the CEO's salary?**
+when return on equity increases by 1%, the CEO's salary increases by 1.74%.
+
+This kind of interpretation can be applied to the remaining variables.
